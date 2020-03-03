@@ -33,8 +33,6 @@ services:
             - /dev/net/tun
         environment:
             - VPN_ENABLED=yes
-            - VPN_USERNAME=
-            - VPN_PASSWORD=
             - LAN_NETWORK=172.18.0.0/16
             - WEBUI_PORT_ENV=8080
             - INCOMING_PORT_ENV=8999
