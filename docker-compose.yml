@@ -4,6 +4,7 @@ services:
 
     nginx:
         image: nginx:alpine
+        container_name: biedaflix_nginx
         ports: 
             - 80:80
             - 443:443
@@ -13,6 +14,15 @@ services:
         depends_on: 
             - biedaflix_server
 
+    biedaflix_client:
+        container_name: biedaflix_client
+        image: grottgera15/biedaflix-client:latest
+        expose:
+            - 80
+        depends_on: 
+            - biedaflix_server
+        restart: unless-stopped
+
     biedaflix_server:
         container_name: biedaflix_server
         image: grottgera15/biedaflix-server:latest
@@ -21,7 +31,7 @@ services:
             - ./files:/usr/app/files
             - /usr/app/
         environment:
-            - BIEDAFLIX_MONGO_HOST=database
+            - BIEDAFLIX_MONGO_HOST=biedaflix_database
             - BIEDAFLIX_TORRENT_HOST=qbittorent_vpn
         depends_on: 
             - qbittorent_vpn
@@ -54,6 +64,7 @@ services:
         restart: unless-stopped
     
     database:
+        container_name: biedaflix_database
         image : mongo
         environment:
             - MONGO_INITDB_DATABASE=biedaflix
