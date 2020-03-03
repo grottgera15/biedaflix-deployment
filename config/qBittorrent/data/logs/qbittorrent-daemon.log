@@ -1,0 +1,6 @@
+bool Http::RequestParser::parseRequestLine(const QString&) invalid http header: "----------------------------788584625312259828708703"
+Http::RequestParser::ParseResult Http::RequestParser::doParse(const QByteArray&) header parsing error
+bool Http::RequestParser::parsePostMessage(const QByteArray&) unknown content type: "application/json"
+Http::RequestParser::ParseResult Http::RequestParser::doParse(const QByteArray&) message body parsing error
+bool Http::RequestParser::parseRequestLine(const QString&) invalid http header: "filter=all%0APOST /api/v2/torrents/info HTTP/1.1"
+Http::RequestParser::ParseResult Http::RequestParser::doParse(const QByteArray&) header parsing error
