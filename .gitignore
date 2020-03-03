@@ -3,3 +3,6 @@ credentials.conf
 
 #qbittorent
 /config/qBittorrent/data/
+
+#database
+/mongodb-data
