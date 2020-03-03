@@ -1,3 +1,5 @@
 #openvpn credentaisl
 credentials.conf 
 
+#qbittorent
+/config/qBittorrent/data/
